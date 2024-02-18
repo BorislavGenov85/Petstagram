@@ -26,6 +26,9 @@ class Pet(models.Model):
         editable=False,
     )
 
+    def __str__(self):
+        return self.name
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if not self.slug:
